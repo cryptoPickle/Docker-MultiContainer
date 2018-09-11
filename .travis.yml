@@ -15,11 +15,11 @@ after_success:
   - docker build -t owned/multi-worker ./worker
   - docker build -t owned/multi-server ./server
 
-# LOGIN DOCKER CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # LOGIN DOCKER CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-# PUSH DOCKER HUB
-- docker push owned/multi-client
-- docker push owned/multi-nginx
-- docker push owned/multi-worker
-- docker push owned/multi-server
+  # PUSH DOCKER HUB
+  - docker push owned/multi-client
+  - docker push owned/multi-nginx
+  - docker push owned/multi-worker
+  - docker push owned/multi-server
