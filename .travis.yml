@@ -10,8 +10,6 @@ script:
   - docker run owned/react-test npm run test -- --coverage
 
 after_success:
-  on:
-    branch: master
   - docker build -t owned/multi-client ./client
   - docker build -t owned/multi-nginx ./nginx
   - docker build -t owned/multi-worker ./worker
@@ -38,4 +36,3 @@ deploy:
   access_key_id: $AWS_ACESS_KEY
   secret_access_key:
     secure: $AWS_SECRET_KEY
-    
