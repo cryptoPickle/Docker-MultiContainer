@@ -7,6 +7,7 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    console.log('Update v1.0.1')
     return (
       <Router>
         <div className="App">
